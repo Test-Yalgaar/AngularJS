@@ -1,0 +1,93 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Yalgaar AngularJS SDK Example</title>
+    <script src="script/jquery-1.10.2.min.js"></script>
+    <script src="script/angular.min.js"></script>
+    <script src="script/yalgaar_angular.js"></script>
+    <script src="script/YalgaarExampleModule.js"></script>   
+    <style>
+        body{
+            background:#ccc;
+            font-family:Arial;
+            font-size:16px;
+        }
+        #wrapper{
+            width:480px;
+            margin:0 auto;
+            text-align:center
+        }
+        input[type='text']
+        {
+            width:150px;
+            height:25px;
+            font-size:14px;
+        }
+        select{
+            height:25px;
+        }
+        table{
+            width:100%;
+            text-align:left;
+        }
+        table tr td{
+            padding:10px 0;
+        }
+        input[type='button']
+        {
+            font-size:16px;
+            padding:5px 10px;
+        }
+    </style>
+    
+</head>
+<body ng-app="demo">
+    <div id="wrapper" ng-controller="demoCntrl">
+        <h2>Yalgaar AngularJS SDK Example</h2>
+        <table>
+            <tr>
+                <td>
+                    Client Key:&nbsp;
+                    <input ng-model="txtClientKey" type="text"/>
+                </td>
+				<td>
+                    UUID:&nbsp;
+                    <input ng-model="txtUUID" type="text"/>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input id="btnConnect" type="button" value="Connect" ng-click="ConnectToYalgaar()" /> 
+                    <input id="btnDisconnect" type="button" value="Disconnect" ng-click="Disconnect()" />
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    Channel Name:&nbsp;&nbsp;
+                    <input ng-model="txtChannel" type="text" />
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input id="btnSub" type="button" value="Subscribe" ng-click="SubscribeMessage()" />
+                    <input id="btnUnSub" type="button" value="Unsubscribe" ng-click="UnsubscribeMessage()" />
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    Message :&nbsp;&nbsp;
+                    <input ng-model="txtMsg" type="text" style="width:250px;" />
+                    &nbsp;&nbsp;
+                    <input id="btnPub" type="button" value="Publish" ng-click="PublishMessage()" />
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <textarea id="txtList" ng-model="txtList" class="aspNetDisabled" style="height:200px;width:700px;" disabled="disabled"></textarea>
+                    <input type="button" name="btnClear" value="Clear" ng-click="Clear()" />
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
